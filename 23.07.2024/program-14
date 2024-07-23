@@ -1,0 +1,18 @@
+class Solution:
+    def sortColors(self, nums):
+        o = t = z = 0
+        for num in nums:
+            if num == 0:
+                z += 1
+            elif num == 1:
+                o += 1
+            elif num == 2:
+                t += 1
+
+        for i in range(len(nums)):
+            if i < z:
+                nums[i] = 0
+            elif i < z + o:
+                nums[i] = 1
+            elif i < z + o + t:
+                nums[i] = 2
